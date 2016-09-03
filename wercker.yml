@@ -50,3 +50,6 @@ deploy:
               cp ghq.txt "$dir/README.txt"
             fi
           done
+    - tcnksm/zip:
+        input: $WERCKER_OUTPUT_DIR/pkg
+        output: $WERCKER_OUTPUT_DIR/dist
