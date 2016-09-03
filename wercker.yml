@@ -50,7 +50,7 @@ deploy:
         code: |
           for dir in $WERCKER_OUTPUT_DIR/pkg/*; do
             if [ -d "$dir" ]; then
-              cp ghq.txt "$dir/README.txt"
+              cp helloworld.txt "$dir/README.txt"
             fi
           done
     - tcnksm/zip:
