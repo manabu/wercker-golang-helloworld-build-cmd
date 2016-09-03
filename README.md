@@ -2,3 +2,5 @@
 Build binaries for hello world command
 
 # how to use
+
+# build with wercker
