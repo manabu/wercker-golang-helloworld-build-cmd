@@ -53,3 +53,9 @@ deploy:
     - tcnksm/zip:
         input: $WERCKER_OUTPUT_DIR/pkg
         output: $WERCKER_OUTPUT_DIR/dist
+    - script:
+        name: set release tag
+        code: |
+          if [ -n "$GOBUMP_NEW_VERSION" ]; then
+            export RELEASE_TAG="v$GOBUMP_NEW_VERSION"
+          fi
