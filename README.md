@@ -6,3 +6,5 @@ Build binaries for hello world command
 # build with wercker
 
 # must be add deploy new pipeline
+
+# generate GITHUB TOKEN at github
