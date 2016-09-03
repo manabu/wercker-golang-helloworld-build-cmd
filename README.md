@@ -8,3 +8,5 @@ Build binaries for hello world command
 # must be add deploy new pipeline
 
 # generate GITHUB TOKEN at github
+
+add token to deploy not build
