@@ -41,3 +41,12 @@ deploy:
         arch: 386 amd64
         output: '{{.Dir}}_{{.OS}}_{{.Arch}}/{{.Dir}}'
         dest: $WERCKER_OUTPUT_DIR/pkg
+    - script:
+        name: include assets into artifacts
+        code: |
+          for dir in $WERCKER_OUTPUT_DIR/pkg/*; do
+            if [ -d "$dir" ]; then
+              cp -R zsh/ "$dir"
+              cp ghq.txt "$dir/README.txt"
+            fi
+          done
