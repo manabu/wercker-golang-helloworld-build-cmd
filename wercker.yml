@@ -32,6 +32,10 @@ deploy:
           apt-get install -y zip
           curl -L http://stedolan.github.io/jq/download/linux64/jq -o /usr/local/bin/jq
           chmod +x /usr/local/bin/jq
+    - motemen/gobump-github-pull-request:
+        github_token: $GITHUB_TOKEN
+        label_pattern_major: ^(major|breaking)$
+        label_pattern_minor: ^(minor|feature)$
     - script:
         name: go get
         code: |
