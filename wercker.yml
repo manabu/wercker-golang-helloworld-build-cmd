@@ -8,12 +8,17 @@ dev:
         reload: true
 build:
   steps:
-    - wercker/golint
+    - setup-go-workspace
     - script:
-        name: go build
+        name: show environments
         code: |
-          go build ./...
+          git version
+          go version
+    - script:
+        name: go get
+        code: |
+          go get -t ./...
     - script:
         name: go test
         code: |
-          go test ./...
+          go test -v ./...
