@@ -7,7 +7,7 @@ import (
 )
 
 func testPrint(w io.Writer){
-	fmt.Println("Hello world!!")
+	fmt.Fprint(w,"Hello world!!\n")
 }
 
 func main() {
