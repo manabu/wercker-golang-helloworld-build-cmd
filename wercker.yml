@@ -40,4 +40,4 @@ deploy:
         os: darwin linux windows
         arch: 386 amd64
         output: '{{.Dir}}_{{.OS}}_{{.Arch}}/{{.Dir}}'
-dest: $WERCKER_OUTPUT_DIR/pkg
+        dest: $WERCKER_OUTPUT_DIR/pkg
