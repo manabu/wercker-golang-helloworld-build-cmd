@@ -50,7 +50,6 @@ deploy:
         code: |
           for dir in $WERCKER_OUTPUT_DIR/pkg/*; do
             if [ -d "$dir" ]; then
-              cp -R zsh/ "$dir"
               cp ghq.txt "$dir/README.txt"
             fi
           done
