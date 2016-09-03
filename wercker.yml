@@ -1,4 +1,4 @@
-box: golang
+box: tcnksm/gox
 dev:
   steps:
     - internal/watch:
