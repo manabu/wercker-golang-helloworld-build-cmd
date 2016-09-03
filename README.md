@@ -10,3 +10,5 @@ Build binaries for hello world command
 # generate GITHUB TOKEN at github
 
 add token to deploy not build
+
+# update verion
