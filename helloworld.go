@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const version = "0.1.3"
+const version = "0.1.4-dev"
 
 func testPrint(w io.Writer) {
 	fmt.Fprint(w, "Hello world!! ["+version+"]!\n")
