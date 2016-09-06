@@ -9,7 +9,7 @@ import (
 const version = "0.1.4-dev"
 
 func testPrint(w io.Writer) {
-	fmt.Fprint(w, "Hello world!! ["+version+"]!\n")
+	fmt.Fprint(w, "Hello world!! ["+version+"]!!\n")
 }
 
 func main() {
