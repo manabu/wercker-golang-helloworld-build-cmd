@@ -35,7 +35,7 @@ deploy:
           go get github.com/motemen/gobump/cmd/gobump
     - script:
         name: get version from gobump
-        code: export RELEASE_TAG=$(gobump show | jq .version)
+        code: export RELEASE_TAG=$(gobump show | jq -r .version)
     - motemen/gobump-github-pull-request:
         github_token: $GITHUB_TOKEN
         label_pattern_major: ^(major|breaking)$
