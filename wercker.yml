@@ -32,6 +32,7 @@ deploy:
           apt-get install -y zip
           curl -L http://stedolan.github.io/jq/download/linux64/jq -o /usr/local/bin/jq
           chmod +x /usr/local/bin/jq
+          go get github.com/motemen/gobump/cmd/gobump
     - script:
         name: get version from gobump
         code: export RELEASE_TAG=$(gobump show | jq .version)
