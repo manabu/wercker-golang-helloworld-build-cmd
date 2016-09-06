@@ -69,7 +69,7 @@ deploy:
         name: set release tag
         code: |
           if [ -n "$GOBUMP_NEW_VERSION" ]; then
-            export RELEASE_TAG="v$GOBUMP_NEW_VERSION"
+            export RELEASE_TAG="$GOBUMP_NEW_VERSION"
           fi
     - tcnksm/ghr:
         token: $GITHUB_TOKEN
