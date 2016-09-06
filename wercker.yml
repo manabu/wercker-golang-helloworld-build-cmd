@@ -35,7 +35,12 @@ deploy:
           go get github.com/motemen/gobump/cmd/gobump
     - script:
         name: get version from gobump
-        code: export RELEASE_TAG=$(gobump show | jq -r .version)
+        code: |
+          export REPLACEFLAG=true
+          export RELEASE_TAG=$(gobump show | jq -r .version)
+          if [[ "$STRING" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            export REPLACEFLAG=false
+          fi
     - motemen/gobump-github-pull-request:
         github_token: $GITHUB_TOKEN
         label_pattern_major: ^(major|breaking)$
@@ -69,4 +74,5 @@ deploy:
     - tcnksm/ghr:
         token: $GITHUB_TOKEN
         input: $WERCKER_OUTPUT_DIR/dist
+        replace: $REPLACEFLAG
         version: $RELEASE_TAG
