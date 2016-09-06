@@ -38,7 +38,7 @@ deploy:
         code: |
           export REPLACEFLAG=true
           export RELEASE_TAG=$(gobump show | jq -r .version)
-          if [[ "$STRING" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          if [[ "$RELEASE_TAG" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             export REPLACEFLAG=false
           fi
     - motemen/gobump-github-pull-request:
